@@ -7,7 +7,8 @@
 
 <title>DeployLynx</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -36,7 +37,9 @@ text-decoration:none;
 margin-left:20px;
 }
 
-nav a:hover{color:#38bdf8}
+nav a:hover{
+color:#38bdf8;
+}
 
 /* HERO */
 
@@ -54,6 +57,11 @@ font-size:80px;
 color:#38bdf8;
 }
 
+.hero p{
+font-size:22px;
+color:#cbd5f5;
+}
+
 /* NETWORK BACKGROUND */
 
 canvas{
@@ -63,7 +71,7 @@ left:0;
 z-index:-1;
 }
 
-/* PROJECTS */
+/* PROJECT SECTION */
 
 .projects{
 display:flex;
@@ -75,11 +83,12 @@ padding:80px;
 
 .card{
 background:#1e293b;
-padding:30px;
+padding:25px;
 width:260px;
 border-radius:12px;
-transition:.4s;
+transition:.3s;
 position:relative;
+overflow:hidden;
 }
 
 .card:hover{
@@ -89,18 +98,19 @@ transform:translateY(-10px);
 .card img{
 width:100%;
 border-radius:10px;
-opacity:0;
-position:absolute;
-top:0;
-left:0;
-transition:.4s;
+margin-bottom:15px;
 }
 
-.card:hover img{
-opacity:1;
+.card h3{
+margin:10px 0;
 }
 
-/* DEVOPS STACK */
+.card a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* TOOL STACK */
 
 .stack{
 text-align:center;
@@ -117,7 +127,7 @@ transition:.3s;
 transform:scale(1.2);
 }
 
-/* GITHUB STATS */
+/* STATS */
 
 .stats{
 text-align:center;
@@ -163,7 +173,11 @@ margin:15px;
 color:white;
 }
 
-.social a:hover{color:#38bdf8}
+.social a:hover{
+color:#38bdf8;
+}
+
+/* FOOTER */
 
 footer{
 background:#020617;
@@ -172,7 +186,6 @@ text-align:center;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -185,7 +198,7 @@ text-align:center;
 
 <div>
 <a href="#projects">Projects</a>
-<a href="#stack">Tools</a>
+<a href="#tools">Tools</a>
 <a href="#stats">Stats</a>
 <a href="#arch">Architecture</a>
 <a href="#connect">Connect</a>
@@ -203,32 +216,56 @@ text-align:center;
 <section id="projects" class="projects">
 
 <div class="card">
-<img src="https://miro.medium.com/v2/resize:fit:1400/1*J9qP6p6nH3UX0DpD6PEw-Q.png">
+
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+
 <h3>DevSecOps Pipeline</h3>
-<a href="https://github.com/Deploylynx-tech/deploylynx-devsecops-pipeline">Open Repo</a>
+
+<a href="https://github.com/Deploylynx-tech/deploylynx-devsecops-pipeline" target="_blank">
+Open Repository
+</a>
+
 </div>
 
 <div class="card">
-<img src="https://spacelift.io/blog/content/images/2023/02/terraform-infrastructure-as-code.png">
+
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+
 <h3>Terraform Infrastructure</h3>
-<a href="https://github.com/Deploylynx-tech/deploylynx-infrastructure">Open Repo</a>
+
+<a href="https://github.com/Deploylynx-tech/deploylynx-infrastructure" target="_blank">
+Open Repository
+</a>
+
 </div>
 
 <div class="card">
-<img src="https://prometheus.io/assets/architecture.png">
+
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+
 <h3>Monitoring Stack</h3>
-<a href="https://github.com/Deploylynx-tech/deploylynx-monitoring">Open Repo</a>
+
+<a href="https://github.com/Deploylynx-tech/deploylynx-monitoring" target="_blank">
+Open Repository
+</a>
+
 </div>
 
 <div class="card">
-<img src="https://miro.medium.com/max/1400/1*2J7L1o1tKTbmPjsGV8eK3g.png">
+
+<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f">
+
 <h3>AI Automation Tools</h3>
-<a href="https://github.com/Deploylynx-tech/ai-automation-tools">Open Repo</a>
+
+<a href="https://github.com/Deploylynx-tech/ai-automation-tools" target="_blank">
+Open Repository
+</a>
+
 </div>
 
 </section>
 
-<section id="stack" class="stack">
+<section id="tools" class="stack">
 
 <h2>DevOps Tool Stack</h2>
 
@@ -245,7 +282,8 @@ text-align:center;
 
 <h2>GitHub Activity</h2>
 
-⭐ Stars: <span id="stars" class="counter">0</span><br>
+⭐ Stars: <span id="stars" class="counter">0</span><br><br>
+
 🍴 Forks: <span id="forks" class="counter">0</span>
 
 </section>
@@ -258,7 +296,7 @@ text-align:center;
 
 <div class="node">Developer</div>
 <div class="node">GitHub</div>
-<div class="node">CI/CD</div>
+<div class="node">CI/CD Pipeline</div>
 <div class="node">Docker</div>
 <div class="node">Kubernetes</div>
 <div class="node">Monitoring</div>
@@ -269,9 +307,21 @@ text-align:center;
 
 <section id="connect" class="social">
 
-<a href="https://github.com/Deploylynx-tech"><i class="fa-brands fa-github"></i></a>
-<a href="https://www.linkedin.com/company/linkedin-deploylynx-devops/"><i class="fa-brands fa-linkedin"></i></a>
-<a href="https://www.instagram.com/deploylynx26/"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://github.com/Deploylynx-tech" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/linkedin-deploylynx-devops/" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://www.instagram.com/deploylynx26/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="mailto:deploylynx@email.com">
+<i class="fas fa-envelope"></i>
+</a>
 
 </section>
 
@@ -293,7 +343,7 @@ canvas.height=window.innerHeight
 
 let particles=[]
 
-for(let i=0;i<80;i++){
+for(let i=0;i<70;i++){
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
@@ -327,7 +377,9 @@ animate()
 /* GITHUB API */
 
 fetch("https://api.github.com/repos/Deploylynx-tech/deploylynx-devsecops-pipeline")
-.then(r=>r.json())
+
+.then(res=>res.json())
+
 .then(data=>{
 document.getElementById("stars").innerText=data.stargazers_count
 document.getElementById("forks").innerText=data.forks_count
