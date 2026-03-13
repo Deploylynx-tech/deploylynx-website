@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -17,18 +18,13 @@ margin:0;
 font-family:Arial;
 background:#0f172a;
 color:white;
-overflow-x:hidden;
 }
-
-/* NAVBAR */
 
 nav{
 display:flex;
 justify-content:space-between;
 padding:20px 40px;
 background:#020617;
-position:sticky;
-top:0;
 }
 
 nav a{
@@ -41,10 +37,8 @@ nav a:hover{
 color:#38bdf8;
 }
 
-/* HERO */
-
 .hero{
-height:90vh;
+height:70vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -59,31 +53,19 @@ color:#38bdf8;
 
 .hero p{
 font-size:22px;
-color:#cbd5f5;
 }
-
-/* BACKGROUND */
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-/* PROJECTS */
 
 .projects{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:30px;
-padding:80px;
+padding:60px;
 }
 
 .card{
 background:#1e293b;
-padding:25px;
+padding:20px;
 width:260px;
 border-radius:12px;
 transition:.3s;
@@ -96,15 +78,16 @@ transform:translateY(-10px);
 .card img{
 width:100%;
 border-radius:10px;
-margin-bottom:15px;
+}
+
+.card h3{
+margin:15px 0;
 }
 
 .card a{
 color:#38bdf8;
 text-decoration:none;
 }
-
-/* DEVOPS STACK */
 
 .stack{
 text-align:center;
@@ -113,27 +96,13 @@ padding:60px;
 
 .stack img{
 width:60px;
-margin:20px;
-transition:.3s;
+margin:15px;
 }
-
-.stack img:hover{
-transform:scale(1.2);
-}
-
-/* STATS */
 
 .stats{
 text-align:center;
 padding:60px;
 }
-
-.counter{
-font-size:40px;
-color:#38bdf8;
-}
-
-/* SOCIAL */
 
 .social{
 font-size:40px;
@@ -161,8 +130,6 @@ text-align:center;
 </head>
 
 <body>
-
-<canvas id="network"></canvas>
 
 <nav>
 
@@ -259,9 +226,8 @@ Open Repository
 
 <h2>GitHub Activity</h2>
 
-⭐ Stars: <span id="stars" class="counter">0</span><br><br>
-
-🍴 Forks: <span id="forks" class="counter">0</span>
+⭐ Stars: <span id="stars">0</span><br><br>
+🍴 Forks: <span id="forks">0</span>
 
 </section>
 
@@ -269,15 +235,15 @@ Open Repository
 
 <section id="connect" class="social">
 
-<a href="https://github.com/Deploylynx-tech">
+<a href="https://github.com/Deploylynx-tech" target="_blank">
 <i class="fab fa-github"></i>
 </a>
 
-<a href="https://www.linkedin.com/company/linkedin-deploylynx-devops/">
+<a href="https://www.linkedin.com/company/linkedin-deploylynx-devops/" target="_blank">
 <i class="fab fa-linkedin"></i>
 </a>
 
-<a href="https://www.instagram.com/deploylynx26/">
+<a href="https://www.instagram.com/deploylynx26/" target="_blank">
 <i class="fab fa-instagram"></i>
 </a>
 
@@ -295,51 +261,10 @@ DeployLynx © 2026
 
 <script>
 
-/* animated network background */
-
-const canvas=document.getElementById("network")
-const ctx=canvas.getContext("2d")
-
-canvas.width=window.innerWidth
-canvas.height=window.innerHeight
-
-let particles=[]
-
-for(let i=0;i<70;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-dx:(Math.random()-.5),
-dy:(Math.random()-.5)
-})
-}
-
-function animate(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height)
-
-particles.forEach(p=>{
-
-p.x+=p.dx
-p.y+=p.dy
-
-ctx.fillStyle="#38bdf8"
-ctx.beginPath()
-ctx.arc(p.x,p.y,2,0,Math.PI*2)
-ctx.fill()
-
-})
-
-requestAnimationFrame(animate)
-
-}
-
-animate()
-
-/* GitHub stats */
-
 fetch("https://api.github.com/repos/Deploylynx-tech/deploylynx-devsecops-pipeline")
+
 .then(res=>res.json())
+
 .then(data=>{
 document.getElementById("stars").innerText=data.stargazers_count
 document.getElementById("forks").innerText=data.forks_count
