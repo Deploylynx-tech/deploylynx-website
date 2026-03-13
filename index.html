@@ -3,12 +3,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DeployLynx</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -48,7 +47,6 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:#020617;
 }
 
 .hero h1{
@@ -92,21 +90,34 @@ transform:translateY(-10px);
 width:100%;
 border-radius:10px;
 opacity:0;
-transition:.4s;
 position:absolute;
 top:0;
 left:0;
+transition:.4s;
 }
 
 .card:hover img{
 opacity:1;
 }
 
-.card h3{
-margin-top:10px;
+/* DEVOPS STACK */
+
+.stack{
+text-align:center;
+padding:60px;
 }
 
-/* STATS */
+.stack img{
+width:60px;
+margin:20px;
+transition:.3s;
+}
+
+.stack img:hover{
+transform:scale(1.2);
+}
+
+/* GITHUB STATS */
 
 .stats{
 text-align:center;
@@ -122,10 +133,10 @@ color:#38bdf8;
 
 .arch{
 display:flex;
-justify-content:center;
-gap:40px;
-padding:60px;
 flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:60px;
 }
 
 .node{
@@ -139,6 +150,21 @@ transition:.3s;
 background:#38bdf8;
 }
 
+/* SOCIAL */
+
+.social{
+font-size:40px;
+text-align:center;
+padding:40px;
+}
+
+.social a{
+margin:15px;
+color:white;
+}
+
+.social a:hover{color:#38bdf8}
+
 footer{
 background:#020617;
 padding:20px;
@@ -146,6 +172,7 @@ text-align:center;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -158,8 +185,10 @@ text-align:center;
 
 <div>
 <a href="#projects">Projects</a>
+<a href="#stack">Tools</a>
 <a href="#stats">Stats</a>
 <a href="#arch">Architecture</a>
+<a href="#connect">Connect</a>
 </div>
 
 </nav>
@@ -199,12 +228,25 @@ text-align:center;
 
 </section>
 
+<section id="stack" class="stack">
+
+<h2>DevOps Tool Stack</h2>
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+
+</section>
+
 <section id="stats" class="stats">
 
-<h2>GitHub Stats</h2>
+<h2>GitHub Activity</h2>
 
-<p>⭐ Stars: <span id="stars" class="counter">0</span></p>
-<p>🍴 Forks: <span id="forks" class="counter">0</span></p>
+⭐ Stars: <span id="stars" class="counter">0</span><br>
+🍴 Forks: <span id="forks" class="counter">0</span>
 
 </section>
 
@@ -214,14 +256,22 @@ text-align:center;
 
 <div class="arch">
 
+<div class="node">Developer</div>
 <div class="node">GitHub</div>
 <div class="node">CI/CD</div>
 <div class="node">Docker</div>
 <div class="node">Kubernetes</div>
-<div class="node">Terraform</div>
 <div class="node">Monitoring</div>
 
 </div>
+
+</section>
+
+<section id="connect" class="social">
+
+<a href="https://github.com/Deploylynx-tech"><i class="fa-brands fa-github"></i></a>
+<a href="https://www.linkedin.com/company/linkedin-deploylynx-devops/"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://www.instagram.com/deploylynx26/"><i class="fa-brands fa-instagram"></i></a>
 
 </section>
 
@@ -233,15 +283,6 @@ DeployLynx © 2026
 
 <script>
 
-/* GITHUB API */
-
-fetch("https://api.github.com/repos/Deploylynx-tech/deploylynx-devsecops-pipeline")
-.then(r=>r.json())
-.then(data=>{
-document.getElementById("stars").innerText=data.stargazers_count
-document.getElementById("forks").innerText=data.forks_count
-})
-
 /* NETWORK BACKGROUND */
 
 const canvas=document.getElementById("network")
@@ -252,7 +293,7 @@ canvas.height=window.innerHeight
 
 let particles=[]
 
-for(let i=0;i<60;i++){
+for(let i=0;i<80;i++){
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
@@ -282,6 +323,15 @@ requestAnimationFrame(animate)
 }
 
 animate()
+
+/* GITHUB API */
+
+fetch("https://api.github.com/repos/Deploylynx-tech/deploylynx-devsecops-pipeline")
+.then(r=>r.json())
+.then(data=>{
+document.getElementById("stars").innerText=data.stargazers_count
+document.getElementById("forks").innerText=data.forks_count
+})
 
 </script>
 
