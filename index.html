@@ -11,25 +11,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial;
-background:#0f172a;
+background:linear-gradient(120deg,#020617,#0f172a);
 color:white;
 }
+
+/* NAVBAR */
 
 nav{
 display:flex;
 justify-content:space-between;
 padding:20px 40px;
 background:#020617;
+position:sticky;
+top:0;
+z-index:10;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:20px;
+margin-left:25px;
+font-size:16px;
 }
+
+nav a:hover{
+color:#38bdf8;
+}
+
+/* HERO */
 
 .hero{
 text-align:center;
@@ -37,19 +53,23 @@ padding:120px 20px;
 }
 
 .hero h1{
-font-size:70px;
+font-size:75px;
 color:#38bdf8;
 }
 
 .hero p{
-font-size:22px;
+font-size:24px;
 color:#cbd5f5;
 }
 
+/* SECTION */
+
 .section{
-padding:70px 20px;
+padding:80px 20px;
 text-align:center;
 }
+
+/* PROJECTS */
 
 .projects{
 display:flex;
@@ -61,14 +81,19 @@ gap:30px;
 .card{
 background:#1e293b;
 padding:30px;
-width:250px;
+width:260px;
 border-radius:12px;
 transition:0.4s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-12px);
 background:#38bdf8;
+}
+
+.card i{
+font-size:40px;
+margin-bottom:15px;
 }
 
 .card a{
@@ -77,9 +102,11 @@ text-decoration:none;
 font-size:18px;
 }
 
+/* DEVOPS TOOLS */
+
 .tools{
-font-size:50px;
-margin-top:20px;
+font-size:55px;
+margin-top:30px;
 }
 
 .tools i{
@@ -89,12 +116,21 @@ transition:0.3s;
 
 .tools i:hover{
 color:#38bdf8;
-transform:scale(1.2);
+transform:scale(1.3);
 }
 
+/* HEATMAP */
+
+.heatmap img{
+width:90%;
+max-width:800px;
+margin-top:30px;
+}
+
+/* SOCIAL */
+
 .social{
-text-align:center;
-font-size:40px;
+font-size:45px;
 margin-top:30px;
 }
 
@@ -107,10 +143,12 @@ color:white;
 color:#38bdf8;
 }
 
+/* FOOTER */
+
 footer{
 background:#020617;
 text-align:center;
-padding:25px;
+padding:30px;
 margin-top:40px;
 }
 
@@ -125,9 +163,12 @@ margin-top:40px;
 <div><strong>DeployLynx</strong></div>
 
 <div>
+
 <a href="#projects">Projects</a>
 <a href="#tools">Tools</a>
+<a href="#activity">Activity</a>
 <a href="#connect">Connect</a>
+
 </div>
 
 </nav>
@@ -140,6 +181,8 @@ margin-top:40px;
 
 </div>
 
+<!-- PROJECTS -->
+
 <div class="section" id="projects">
 
 <h2>Projects</h2>
@@ -147,24 +190,28 @@ margin-top:40px;
 <div class="projects">
 
 <div class="card">
+<i class="fa-solid fa-code"></i>
 <a href="https://github.com/Deploylynx-tech/deploylynx-devsecops-pipeline" target="_blank">
 DevSecOps Pipeline
 </a>
 </div>
 
 <div class="card">
+<i class="fa-solid fa-cloud"></i>
 <a href="https://github.com/Deploylynx-tech/deploylynx-infrastructure" target="_blank">
 Terraform Infrastructure
 </a>
 </div>
 
 <div class="card">
+<i class="fa-solid fa-chart-line"></i>
 <a href="https://github.com/Deploylynx-tech/deploylynx-monitoring" target="_blank">
 Monitoring Stack
 </a>
 </div>
 
 <div class="card">
+<i class="fa-solid fa-robot"></i>
 <a href="https://github.com/Deploylynx-tech/ai-automation-tools" target="_blank">
 AI Automation Tools
 </a>
@@ -173,6 +220,8 @@ AI Automation Tools
 </div>
 
 </div>
+
+<!-- DEVOPS TOOLS -->
 
 <div class="section" id="tools">
 
@@ -189,6 +238,22 @@ AI Automation Tools
 </div>
 
 </div>
+
+<!-- GITHUB ACTIVITY -->
+
+<div class="section" id="activity">
+
+<h2>GitHub Activity</h2>
+
+<div class="heatmap">
+
+<img src="https://ghchart.rshah.org/Deploylynx-tech" />
+
+</div>
+
+</div>
+
+<!-- SOCIAL -->
 
 <div class="section" id="connect">
 
@@ -218,7 +283,7 @@ AI Automation Tools
 
 <footer>
 
-<p>© 2026 DeployLynx</p>
+<p>© 2026 DeployLynx | DevOps • Cloud • Automation</p>
 
 </footer>
 
