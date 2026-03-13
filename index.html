@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -20,8 +21,6 @@ color:white;
 overflow-x:hidden;
 }
 
-/* NAVBAR */
-
 nav{
 display:flex;
 justify-content:space-between;
@@ -40,8 +39,6 @@ margin-left:20px;
 nav a:hover{
 color:#38bdf8;
 }
-
-/* HERO */
 
 .hero{
 height:90vh;
@@ -62,8 +59,6 @@ font-size:22px;
 color:#cbd5f5;
 }
 
-/* NETWORK BACKGROUND */
-
 canvas{
 position:fixed;
 top:0;
@@ -71,7 +66,7 @@ left:0;
 z-index:-1;
 }
 
-/* PROJECT SECTION */
+/* PROJECTS */
 
 .projects{
 display:flex;
@@ -87,8 +82,6 @@ padding:25px;
 width:260px;
 border-radius:12px;
 transition:.3s;
-position:relative;
-overflow:hidden;
 }
 
 .card:hover{
@@ -110,7 +103,7 @@ color:#38bdf8;
 text-decoration:none;
 }
 
-/* TOOL STACK */
+/* DEVOPS STACK */
 
 .stack{
 text-align:center;
@@ -139,27 +132,6 @@ font-size:40px;
 color:#38bdf8;
 }
 
-/* ARCHITECTURE */
-
-.arch{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-padding:60px;
-}
-
-.node{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-transition:.3s;
-}
-
-.node:hover{
-background:#38bdf8;
-}
-
 /* SOCIAL */
 
 .social{
@@ -177,8 +149,6 @@ color:white;
 color:#38bdf8;
 }
 
-/* FOOTER */
-
 footer{
 background:#020617;
 padding:20px;
@@ -186,6 +156,7 @@ text-align:center;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -200,7 +171,6 @@ text-align:center;
 <a href="#projects">Projects</a>
 <a href="#tools">Tools</a>
 <a href="#stats">Stats</a>
-<a href="#arch">Architecture</a>
 <a href="#connect">Connect</a>
 </div>
 
@@ -213,11 +183,13 @@ text-align:center;
 
 </div>
 
+<!-- PROJECTS -->
+
 <section id="projects" class="projects">
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<img src="https://raw.githubusercontent.com/Deploylynx-tech/deploylynx-devsecops-pipeline/main/docs/architecture.png">
 
 <h3>DevSecOps Pipeline</h3>
 
@@ -229,7 +201,7 @@ Open Repository
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+<img src="https://raw.githubusercontent.com/Deploylynx-tech/deploylynx-infrastructure/main/docs/architecture.png">
 
 <h3>Terraform Infrastructure</h3>
 
@@ -241,7 +213,7 @@ Open Repository
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<img src="https://raw.githubusercontent.com/Deploylynx-tech/deploylynx-monitoring/main/docs/architecture.png">
 
 <h3>Monitoring Stack</h3>
 
@@ -253,7 +225,7 @@ Open Repository
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f">
+<img src="https://raw.githubusercontent.com/Deploylynx-tech/ai-automation-tools/main/docs/architecture.png">
 
 <h3>AI Automation Tools</h3>
 
@@ -264,6 +236,8 @@ Open Repository
 </div>
 
 </section>
+
+<!-- DEVOPS STACK -->
 
 <section id="tools" class="stack">
 
@@ -278,6 +252,8 @@ Open Repository
 
 </section>
 
+<!-- GITHUB STATS -->
+
 <section id="stats" class="stats">
 
 <h2>GitHub Activity</h2>
@@ -288,34 +264,19 @@ Open Repository
 
 </section>
 
-<section id="arch">
-
-<h2 style="text-align:center">DevOps Architecture</h2>
-
-<div class="arch">
-
-<div class="node">Developer</div>
-<div class="node">GitHub</div>
-<div class="node">CI/CD Pipeline</div>
-<div class="node">Docker</div>
-<div class="node">Kubernetes</div>
-<div class="node">Monitoring</div>
-
-</div>
-
-</section>
+<!-- SOCIAL -->
 
 <section id="connect" class="social">
 
-<a href="https://github.com/Deploylynx-tech" target="_blank">
+<a href="https://github.com/Deploylynx-tech">
 <i class="fab fa-github"></i>
 </a>
 
-<a href="https://www.linkedin.com/company/linkedin-deploylynx-devops/" target="_blank">
+<a href="https://www.linkedin.com/company/linkedin-deploylynx-devops/">
 <i class="fab fa-linkedin"></i>
 </a>
 
-<a href="https://www.instagram.com/deploylynx26/" target="_blank">
+<a href="https://www.instagram.com/deploylynx26/">
 <i class="fab fa-instagram"></i>
 </a>
 
@@ -332,8 +293,6 @@ DeployLynx © 2026
 </footer>
 
 <script>
-
-/* NETWORK BACKGROUND */
 
 const canvas=document.getElementById("network")
 const ctx=canvas.getContext("2d")
@@ -374,8 +333,6 @@ requestAnimationFrame(animate)
 
 animate()
 
-/* GITHUB API */
-
 fetch("https://api.github.com/repos/Deploylynx-tech/deploylynx-devsecops-pipeline")
 
 .then(res=>res.json())
@@ -388,4 +345,5 @@ document.getElementById("forks").innerText=data.forks_count
 </script>
 
 </body>
+
 </html>
